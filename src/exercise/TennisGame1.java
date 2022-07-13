@@ -3,7 +3,7 @@ package exercise;
 
 public class TennisGame1 implements TennisGame {
     private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
-    private static final String[] equalScores = {"Love-All", "Fifteen-All", "Thirty-All", "Duce"};
+    private static final String[] equalScores = {"Love-All", "Fifteen-All", "Thirty-All", "Deuce"};
     private Player player1;
     private Player player2;
 
@@ -40,7 +40,7 @@ public class TennisGame1 implements TennisGame {
         if (isScoreEqual())
         {
             if (winner.getScore() >= 4) {
-                return "Duce";
+                return "Deuce";
             }
             return equalScores[winner.getScore()];
         }
