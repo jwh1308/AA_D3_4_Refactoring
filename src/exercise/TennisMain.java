@@ -5,8 +5,8 @@ public class TennisMain {
 
     public static void main(String[] args) {
 
-        Player player1 = new Player("leek");
-        Player player2 = new Player("lily");
+        Player player1 = new Player("play", Player.PlayerGroup.PLAYER1);
+        Player player2 = new Player("lily", Player.PlayerGroup.PLAYER2);
 
         TennisGame1 game = new TennisGame1(player1, player2);
         playGame(game, player1, player2);

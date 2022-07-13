@@ -49,9 +49,9 @@ public class TennisGame1 implements TennisGame {
             Player looser = getLooser();
 
             if (winner.getScore() - looser.getScore() == 1) {
-                return "Advantage " + winner.getName();
+                return "Advantage " + winner.getPlayerType();
             } else {
-                return "Win for " + winner.getName();
+                return "Win for " + winner.getPlayerType();
             }
         }
         return scores[player1.getScore()] + "-" + scores[player2.getScore()];
