@@ -14,8 +14,8 @@ class LoveAll implements ScoreState { // 0-0
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenLove()); }
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new LoveFifteen()); }
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FifteenLove.getInstance()); }
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(LoveFifteen.getInstance()); }
 	public String getScore() { return state_name; }	
 }
 
@@ -29,8 +29,8 @@ class FifteenLove implements ScoreState { // 1-0
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyLove()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenAll()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyLove.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(FifteenAll.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -44,8 +44,8 @@ class LoveFifteen implements ScoreState { // 0-1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenAll()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new LoveThirty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FifteenAll.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(LoveThirty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -59,8 +59,8 @@ class ThirtyLove implements ScoreState { // 2-0
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FortyLove()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyFifteen()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FortyLove.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyFifteen.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -74,8 +74,8 @@ class FifteenAll implements ScoreState { // 1-1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyFifteen()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenThirty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyFifteen.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(FifteenThirty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -89,8 +89,8 @@ class LoveThirty implements ScoreState { // 0-2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenThirty()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new LoveForty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FifteenThirty.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(LoveForty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -104,8 +104,8 @@ class FortyLove implements ScoreState { //  3-0
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new FortyFifteen()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(FortyFifteen.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -119,8 +119,8 @@ class ThirtyFifteen implements ScoreState { // 2-1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FortyFifteen()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyThirty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FortyFifteen.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyThirty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -134,8 +134,8 @@ class FifteenThirty implements ScoreState { // 1-2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyThirty()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenForty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyThirty.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(FifteenForty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -149,8 +149,8 @@ class LoveForty implements ScoreState { // 0-3
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenForty()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FifteenForty.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -164,8 +164,8 @@ class FortyFifteen implements ScoreState { //  3-1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new Advantage_player1()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(Advantage_player1.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -179,8 +179,8 @@ class ThirtyThirty implements ScoreState { // 2-2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FortyThirty()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyForty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(FortyThirty.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(ThirtyForty.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -194,8 +194,8 @@ class FifteenForty implements ScoreState { // 1-3
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new Advantage_player2()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(Advantage_player2.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -209,8 +209,8 @@ class FortyThirty implements ScoreState { // 3-2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new Deuce()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(Deuce.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -224,8 +224,8 @@ class ThirtyForty implements ScoreState { // 2-3
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new Deuce()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(Deuce.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -239,8 +239,8 @@ class Deuce implements ScoreState { // 3-3 Deuce
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new Advantage_player1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new Advantage_player2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(Advantage_player1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(Advantage_player2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -254,8 +254,8 @@ class Advantage_player1 implements ScoreState { // Advantage player1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new Deuce()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(Deuce.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -269,8 +269,8 @@ class Advantage_player2 implements ScoreState { // Advantage player2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new Deuce()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(Deuce.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -284,8 +284,8 @@ class WinForPlayer1 implements ScoreState { // Win for player1
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer1()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer1.getInstance()); };
 	public String getScore() { return state_name; }	
 }
 
@@ -299,7 +299,7 @@ class WinForPlayer2 implements ScoreState { // Win for player2
 		}
 		return instance;
 	}
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new WinForPlayer2()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(WinForPlayer2.getInstance()); };
 	public String getScore() { return state_name; }	
 }
