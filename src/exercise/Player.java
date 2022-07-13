@@ -2,8 +2,8 @@ package exercise;
 
 public class Player {
     public static class PlayerGroup {
-        public static final PlayerGroup PLAYER1 = new PlayerGroup("Player 1");
-        public static final PlayerGroup PLAYER2 = new PlayerGroup("Player 2");
+        public static final PlayerGroup PLAYER1 = new PlayerGroup("player1");
+        public static final PlayerGroup PLAYER2 = new PlayerGroup("player2");
 
         private final String playerGroup;
         private PlayerGroup(String playerGroup) {

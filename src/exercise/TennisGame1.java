@@ -20,7 +20,7 @@ public class TennisGame1 implements TennisGame {
         	score_state.wonPlayer2(this);
     }
 
-    public String getLiteralScore() {
+    public String getLiteralScore() 
     	return score_state.getScore();
     }
     
