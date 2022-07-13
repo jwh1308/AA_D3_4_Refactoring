@@ -1,3 +1,6 @@
+package exercise;
+
+
 public class TennisGame1 implements TennisGame {
 	ScoreState score_state;
     private Player player1;
@@ -17,7 +20,7 @@ public class TennisGame1 implements TennisGame {
         	score_state.wonPlayer2(this);
     }
 
-    public String getLiteralScore() {
+    public String getLiteralScore() 
     	return score_state.getScore();
     }
     
