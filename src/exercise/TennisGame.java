@@ -1,7 +1,7 @@
 package exercise;
 
 public interface TennisGame {
-    void wonPoint(String playerName);
+    void wonPoint(Player player);
     String getLiteralScore();
-	boolean isEnd();
+    boolean isEnd();
 }

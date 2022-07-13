@@ -1,85 +1,68 @@
 package exercise;
 
-public class TennisGame1 implements TennisGame {
-    
-    private int m_score1 = 0;
-    private int m_score2 = 0;
-    private boolean isEnd = false;
-    
-    public TennisGame1() {
 
+public class TennisGame1 implements TennisGame {
+    private static final String[] scores = {"Love", "Fifteen", "Thirty", "Forty"};
+    private static final String[] equalScores = {"Love-All", "Fifteen-All", "Thirty-All", "Duce"};
+    private Player player1;
+    private Player player2;
+
+    public TennisGame1(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
-    public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            m_score1 += 1;
-        else
-            m_score2 += 1;
+    public void wonPoint(Player wonPlayer) {
+        wonPlayer.won();
+    }
+
+    private Player getWinner() {
+        if (player1.getScore() > player2.getScore()) {
+            return player1;
+        }
+        return player2;
+    }
+
+    private Player getLooser() {
+        if (player1.getScore() < player2.getScore()) {
+            return player1;
+        }
+        return player2;
+    }
+
+    private boolean isScoreEqual() {
+        return (player1.getScore() == player2.getScore());
     }
 
     public String getLiteralScore() {
-        String score = "";
-        int tempScore=0;
-        if (m_score1==m_score2)
+        Player winner = getWinner();
+
+        if (isScoreEqual())
         {
-            switch (m_score1)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
+            if (winner.getScore() >= 4) {
+                return "Duce";
+            }
+            return equalScores[winner.getScore()];
+        }
+        else if (winner.getScore() >= 4)
+        {
+            Player looser = getLooser();
+
+            if (winner.getScore() - looser.getScore() == 1) {
+                return "Advantage " + winner.getName();
+            } else {
+                return "Win for " + winner.getName();
             }
         }
-        else if (m_score1>=4 || m_score2>=4)
-        {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) {
-            	score = "Win for player1";
-            	isEnd = true;
-            }
-            else {
-            	score ="Win for player2";
-            	isEnd = true;
-            }
-        }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
-        }
-        return score;
+        return scores[player1.getScore()] + "-" + scores[player2.getScore()];
     }
-    
+
     public boolean isEnd() {
-		return isEnd;
-	}
+        Player winner = getWinner();
+        Player looser = getLooser();
+
+        if (winner.getScore() >= 4 && winner.getScore() - looser.getScore() > 1)
+            return true;
+        return false;
+    }
 }
