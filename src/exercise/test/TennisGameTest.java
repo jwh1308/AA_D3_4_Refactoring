@@ -15,8 +15,8 @@ class TennisGameTest {
 	void testCasePlayer1AllWin() {
 		System.out.println("=========================testCasePlayer1AllWin========================");
 		//TennisGame game = new TennisGame1();
-		Player player1 = new Player("leek");
-		Player player2 = new Player("lily");
+		Player player1 = new Player("play", Player.PlayerGroup.PLAYER1);
+        Player player2 = new Player("lily", Player.PlayerGroup.PLAYER2);
 		TennisGame game = new TennisGame1(player1, player2);
 	
 		System.out.println(game.isEnd());
@@ -58,8 +58,8 @@ class TennisGameTest {
 	@Test
 	void testCasePlayer2AllWin() {
 		System.out.println("=========================testCasePlayer2AllWin========================");
-		Player player1 = new Player("leek");
-		Player player2 = new Player("lily");
+		Player player1 = new Player("play", Player.PlayerGroup.PLAYER1);
+        Player player2 = new Player("lily", Player.PlayerGroup.PLAYER2);
 		TennisGame game = new TennisGame1(player1, player2);
 	
 		
@@ -99,8 +99,8 @@ class TennisGameTest {
 	@Test
 	void testCasePlayerPingPong1() {
 		System.out.println("=========================testCasePlayerPingPong1========================");
-		Player player1 = new Player("leek");
-		Player player2 = new Player("lily");
+		Player player1 = new Player("play", Player.PlayerGroup.PLAYER1);
+        Player player2 = new Player("lily", Player.PlayerGroup.PLAYER2);
 		TennisGame game = new TennisGame1(player1, player2);
 	
 		System.out.println(game.isEnd());
@@ -177,8 +177,8 @@ class TennisGameTest {
 	@Test
 	void testCasePlayerPingPong2() {
 		System.out.println("=========================testCasePlayerPingPong2========================");
-		Player player1 = new Player("leek");
-		Player player2 = new Player("lily");
+		Player player1 = new Player("play", Player.PlayerGroup.PLAYER1);
+        Player player2 = new Player("lily", Player.PlayerGroup.PLAYER2);
 		TennisGame game = new TennisGame1(player1, player2);
 	
 		System.out.println(game.isEnd());
