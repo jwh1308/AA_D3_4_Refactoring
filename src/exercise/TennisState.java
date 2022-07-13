@@ -56,13 +56,13 @@ class FortyLove implements ScoreState { //  3-0
 class ThirtyFifteen implements ScoreState { // 2-1
 	String state_name = "Thirty-Fifteen";
 	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new FortyFifteen()); };
-	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyThirty()); };
+	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyAll()); };
 	public String getScore() { return state_name; }	
 }
 
 class FifteenThirty implements ScoreState { // 1-2
 	String state_name = "Fifteen-Thirty";
-	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyThirty()); };
+	public void wonPlayer1(TennisGame1 tennis_game) { tennis_game.changeState(new ThirtyAll()); };
 	public void wonPlayer2(TennisGame1 tennis_game) { tennis_game.changeState(new FifteenForty()); };
 	public String getScore() { return state_name; }	
 }
