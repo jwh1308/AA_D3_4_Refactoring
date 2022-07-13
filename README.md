@@ -12,7 +12,8 @@
  - Player name 을 Player 객체로 수정 하여 관리
  
  ##### Extract method
- - 
+ - 게임 종료 조건의 업데이트를 스코어를 얻어올 때 하고 있음(함수 SRP위반/Feature Envy)
+ - isEnd함수 내에서 종료 확인을 처리하도록 함.
 
  ##### State design pattern
  -  Game score 를 state pattern 으로 관리
