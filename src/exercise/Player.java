@@ -2,12 +2,16 @@ package exercise;
 
 public class Player {
     public static class PlayerGroup {
-        public static final PlayerGroup PLAYER1 = new PlayerGroup(0);
-        public static final PlayerGroup PLAYER2 = new PlayerGroup(1);
+        public static final PlayerGroup PLAYER1 = new PlayerGroup("Player 1");
+        public static final PlayerGroup PLAYER2 = new PlayerGroup("Player 2");
 
-        private final int playerType;
-        private PlayerGroup(int playerType) {
-            this.playerType = playerType;
+        private final String playerGroup;
+        private PlayerGroup(String playerGroup) {
+            this.playerGroup = playerGroup;
+        }
+        @Override
+        public String toString() {
+            return playerGroup;
         }
     }
 
@@ -17,6 +21,7 @@ public class Player {
 
     public Player(String name, PlayerGroup playerGroup) {
         this.name = name;
+        this.playerGroup = playerGroup;
         score = 0;
     }
 
@@ -32,8 +37,6 @@ public class Player {
         return name;
     }
     public String getPlayerType() {
-        if (playerGroup == PlayerGroup.PLAYER1)
-            return "Player 1";
-        return "Player 2";
+        return playerGroup.toString();
     }
 }
